@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyAlcoholApp.MainPage"
+             BackgroundColor="Beige">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Age Calculator!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <DatePicker x:Name="myDatePicker"
+                   />
+
+        <Button x:Name="myButton"
+                Text="Calculate Age"
+                BackgroundColor="Azure"
+                Clicked="Handle_Clicked"/>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Label Text="Days Between Dates"
+               Style="{DynamicResource TitleStyle}"
+               Margin="0, 20"
+               HorizontalTextAlignment="Center" />
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <Label Text="Start Date:" />
+
+        <DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" />
+
+        <Label Text="End Date:" />
+
+        <DatePicker x:Name="endDatePicker"
+                    MinimumDate="{Binding Source={x:Reference startDatePicker},
+                                          Path=Date.Now}"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+                    DateSelected="OnDateSelected" 
+                    />
+
+        <StackLayout Orientation="Horizontal"
+                     Margin="0, 0, 0, 30">
+            <Label Text="Include both days in total: "
+                   VerticalOptions="Center" />
+            <Switch x:Name="includeSwitch"
+                    Toggled="OnSwitchToggled" />
+        </StackLayout>
+
+        <Label x:Name="resultLabel"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+    </StackLayout>
+
+</ContentPage>
