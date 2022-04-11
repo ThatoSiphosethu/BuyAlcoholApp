@@ -15,17 +15,18 @@ namespace BuyAlcoholApp
             InitializeComponent();
             myDatePicker.MaximumDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
         }
-
+        private int LegalAge = 21;
         void Handle_Clicked(object sender, System.EventArgs e)
         {
             var CurrentYear = DateTime.Now.Year;
             var DOB_Year = myDatePicker.Date.Year;
 
             var Age = CurrentYear - DOB_Year;
+            var Wait = LegalAge - Age;
 
             if (Age < 21)
             {
-                DisplayAlert("Message", $"You're {Age}, You are underage!!!", "Ok");
+                DisplayAlert("Message", $"You're {Age}, You are underage!!! {Wait}yrs to go", "Ok" );
             } 
             else if (Age > 21)
             {
